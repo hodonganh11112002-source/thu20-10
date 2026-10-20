@@ -311,7 +311,7 @@ button{touch-action:manipulation}
       <p class="eyebrow foil">Vietnamese Women's Day</p>
       <h1 class="script-title">Happy Women's Day</h1>
       <p class="ornament"><span class="foil">20 · 10 · 2026</span></p>
-      <p class="intro-lead">Một đóa hồng pha lê và một lá thư tay con viết đang chờ mẹ mở.</p>
+      <p class="intro-lead">Có quà của con nè, mẹ mở ra coi thử nha.</p>
     </header>
     <div class="slot" id="heroSlot"></div>
     <form class="glass name-card" id="nameForm" autocomplete="off" novalidate>
@@ -382,7 +382,7 @@ button{touch-action:manipulation}
       <h2 class="paper-greet" id="pGreet"></h2>
       <div class="paper-body" id="pBody"></div>
       <p class="paper-ps" id="pPs"></p>
-      <div class="paper-sign" id="pSign"><span>Con của mẹ,</span><strong id="pSender"></strong></div>
+      <div class="paper-sign" id="pSign"><span>Con trai của mẹ,</span><strong id="pSender"></strong></div>
     </div>
   </article>
   <div class="row">
@@ -429,12 +429,12 @@ const CONFIG = {
   letters: [
     {
       paragraphs: [
-        "Hôm nay là 20/10, con muốn gửi mẹ một đóa hồng không bao giờ héo, giống như tình thương mẹ dành cho con suốt bao nhiêu năm qua.",
-        "Cả đời mẹ lo cho con từ bữa cơm, giấc ngủ đến từng bước con đi. Có những lần mẹ mệt mà vẫn cười để con yên tâm, có những điều mẹ hy sinh mà chưa bao giờ kể. Con lớn rồi mới hiểu, những điều đó không hề nhỏ chút nào.",
-        "Con chúc mẹ luôn khỏe mạnh, ăn ngon, ngủ ngon và bớt lo cho con đi một chút. Mong mẹ lúc nào cũng vui, lúc nào cũng được thương, và có thật nhiều thời gian cho riêng mình. Con ít khi nói ra, nhưng con biết ơn mẹ nhiều lắm."
+        "Mẹ ơi, 20/10 rồi! Hôm nay con không tặng hoa thật vì sợ mẹ chê tốn tiền, nên con làm cái thiệp này tặng mẹ nè.",
+        "Chúc mẹ lúc nào cũng khỏe re, ăn được ngủ được, đi đâu cũng có người khen mẹ trẻ. Chúc mẹ bớt lo chuyện con ăn uống ra sao, vì con lớn rồi, vẫn tự lo được (dù thỉnh thoảng hơi lười).",
+        "Hôm nay mẹ cứ nghỉ ngơi, khỏi nấu nướng gì nhiều, coi phim hay đi chơi gì thì đi. Mẹ vui là con vui rồi."
       ],
-      closing: "Con thương mẹ nhiều lắm!",
-      ps: "Con hứa sẽ dành nhiều thời gian bên mẹ hơn. Mẹ nhớ giữ gìn sức khỏe nha mẹ."
+      closing: "Happy 20/10 mẹ nha!",
+      ps: "Đóa hồng này không héo, khỏi tưới, mẹ khỏi lo luôn."
     }
   ]
 };
@@ -1204,7 +1204,7 @@ nameInput.addEventListener('input', () => {
   const n = formatName(nameInput.value);
   formMsg.textContent = '';
   if (!n) { preview.hidden = true; return; }
-  previewName.textContent = 'Gửi ' + n + ' yêu thương';
+  previewName.textContent = 'Gửi ' + n;
   preview.hidden = false;
 });
 try {
@@ -1298,7 +1298,7 @@ async function startLetter(instant) {
   S.state = 'letter';
   skipTyping = instant || REDUCED;
   $('#pDate').textContent = CONFIG.date;
-  $('#pGreet').textContent = 'Gửi ' + S.name + ' yêu thương,';
+  $('#pGreet').textContent = 'Gửi ' + S.name + ',';
   pBody.innerHTML = ''; pPs.classList.remove('show'); pSign.classList.remove('show'); paper.scrollTop = 0;
   pPs.innerHTML = '<b>Tái bút:</b> '; pPs.appendChild(document.createTextNode(fillText(L.ps)));
   skipBtn.hidden = skipTyping; anotherBtn.hidden = true; toFinale.hidden = true;
