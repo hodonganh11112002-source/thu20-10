@@ -557,7 +557,8 @@ function createMusic() {
   }
   if (useFile) {
     audioEl = new Audio(); audioEl.src = CONFIG.musicUrl; audioEl.loop = true; audioEl.preload = 'auto'; audioEl.volume = 0;
-    audioEl.addEventListener('error', () => { useFile = false; if (on) { on = false; start(); } });
+    let retries = 0;
+    audioEl.addEventListener('error', () => { if (retries++ < 5) setTimeout(() => { audioEl.src = CONFIG.musicUrl + '?r=' + retries; audioEl.load(); if (on) audioEl.play().catch(() => {}); }, 1500); });
   }
   const EIGHTH = 60 / 76 / 2;
   const CHORDS = [[62, 'M'], [57, 'M'], [59, 'm'], [54, 'm'], [55, 'M'], [62, 'M'], [55, 'M'], [57, 'M']];
